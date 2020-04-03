@@ -3,29 +3,176 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src="app.js"></script>
 </head>
 <body>
+<div class="main-wrapper">
+    <h2>Select Modality</h2>
 
-<h2>Select Modality</h2>
+    <!-- Trigger/Open The Modal -->
+    <button id="btnStim1" class="btn">Stim Channel 1</button>
+    <button id="btnStim2" class="btn">Stim Channel 2</button>
+    <button id="btnUltrasound" class="btn">Ultrasound</button>
+    <button id="btnTENS" class="btn">TENS</button>
 
-<!-- Trigger/Open The Modal -->
-<button id="btnStim1">Stim Channel 1</button>
-<button id="btnStim2">Stim Channel 2</button>
-<button id="btnUltrasound">Ultrasound</button>
-<button id="btnTens">TENS</button>
+    <!-- ================================================================= -->
 
-<!-- The Modal -->
-<div id="modalStim1" class="modal">
+    <!-- Stim 1 Modal -->
+    <div id="modalStim1" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Dropdown options for Stim Channel 1</p>
-  </div>
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span id="modalStim1Close" class="close">&times;</span>
+        
+            <div class="choices">
+                <h2>Choose:</h2>
+                <form>
+                Sweep: 
+                <select id="stim1-sweep" class="entry">
+                    <option>One</option>
+                    <option>Two</option>
+                    <option>Three</option>
+                </select>
+                <br><br>
+                Frequency: 
+                <select id="stim1-frequency" class="entry">
+                    <option>90</option>
+                    <option>100</option>
+                    <option>110</option>
+                </select>
+                <br><br>
+                <label for="stim1-time">Time (mins):</label>
+                    <input type="number" id="stim1-time" name="stim1-time" required value="1" min="1" max="60" class="value-entry">
+                <br><br>
+                <label for="stim1-intensity">Intensity (Hz):</label>
+                    <input type="number" id="stim1-intensity" name="stim1-intensity" required value="1" min="1" max="10" class="value-entry">
+                <br><br>
+                Explanation:<br>
+                <textarea rows="5" cols="30" name="stim1-explanation" class="value-entry">Enter clinical reasoning here</textarea>
+                <br><br>
+                <input type="button" onclick="reset_form()" value="Reset">
+                </form>
 
+                <br>
+                <input type="button" onclick="showSummary()" value="Submit">
+
+            </div>
+
+            <div class="summary">
+                <h2>Summary</h2>
+                Sweep: <span id="stim1-sweep-sum" class="result">-</span>
+                <br><br>
+                Frequency: <span id="stim1-frequency-sum" class="result">-</span>
+                <br><br>
+                Time: <span id="stim1-time-sum" class="value-result">-</span> min(s)
+                <br><br>
+                Intensity: <span id="stim1-intensity-sum" class="value-result">-</span> Hz
+                <br><br>
+                Explanation: <span id="stim1-explanation-sum" class="value-result">-</span>
+
+            </div>
+
+    </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+
+    <!-- Stim 2 Modal -->
+    <div id="modalStim2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close" id="modalStim2Close">&times;</span>
+        
+        <div class="choices">
+            <h2>Choose:</h2>
+            <form>
+            Sweep: 
+            <select id="stim2-sweep" class="entry">
+                <option>One</option>
+                <option>Two</option>
+                <option>Three</option>
+            </select>
+            <br><br>
+            Frequency: 
+            <select id="stim2-frequency" class="entry">
+                <option>90</option>
+                <option>100</option>
+                <option>110</option>
+            </select>
+            <br><br>
+            <label for="stim2-time">Time (mins):</label>
+                <input type="number" id="stim2-time" name="stim2-time" required value="1" min="1" max="60" class="value-entry">
+            <br><br>
+            <label for="stim2-intensity">Intensity (Hz):</label>
+                <input type="number" id="stim2-intensity" name="stim2-intensity" required value="1" min="1" max="10" class="value-entry">
+            <br><br>
+                <label for="stim2-range">Range:</label>
+                <input type="range" id="stim2-range" name="stim2-range" value="0" min="0" max="50" step="10" class="value-entry">
+                <span id="stim2-range-display" class="range-display">0</span>
+            <br><br>
+            Explanation:<br>
+            <textarea rows="5" cols="30" name="stim2-explanation" class="value-entry">Enter clinical reasoning here</textarea>
+            <br><br>
+            <input type="button" onclick="reset_form()" value="Reset">
+            </form>
+
+            <br>
+            <input type="button" onclick="showSummary()" value="Submit">
+
+        </div>
+
+        <div class="summary">
+            <h2>Summary</h2>
+            Sweep: <span id="stim2-sweep-sum" class="result">-</span>
+            <br><br>
+            Frequency: <span id="stim2-frequency-sum" class="result">-</span>
+            <br><br>
+            Time: <span id="stim2-time-sum" class="value-result">-</span> min(s)
+            <br><br>
+            Intensity: <span id="stim2-intensity-sum" class="value-result">-</span> Hz
+            <br><br>
+            Range: <span id="stim2-range-sum" class="value-result">-</span>
+            <br><br>
+            Explanation: <span id="stim2-explanation-sum" class="value-result">-</span>
+
+        </div>
+        
+        </div>
+
+    </div>
+
+    <!-- ================================================================= --> 
+
+    <!-- Ultrasound Modal -->
+    <div id="modalUltrasound" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close" id="modalUltrasoundClose">&times;</span>
+        <p>Dropdown options for Ultrasound</p>
+        </div>
+    
+    </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+
+    <!-- TENS Modal -->
+    <div id="modalTENS" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close" id="modalTENSClose">&times;</span>
+        <p>Dropdown options for TENS</p>
+        </div>
+    
+    </div>
+
+    </div>
 </div>
-
+<script src="app.js"></script>
 
 </body>
 </html>
