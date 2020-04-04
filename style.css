@@ -23,6 +23,7 @@ h1, h2, h3 {
     padding: 0px 10px 25px 25px;
     background-color: white;
     box-shadow:  0px 0px 10px 3px #d8dee9;
+    margin-top: 50px;
 }
 
 .btn-container {
@@ -104,6 +105,7 @@ button, input[type=button] {
   transition-duration: 0.4s;
   width: 200px;
   margin: 5px;
+  box-shadow:  2px 2px 2px 1px #4c566a77;
 }
 
 button:hover {
@@ -201,6 +203,7 @@ a.button:active{
 
 input[type=number].value-entry{
   font-family: 'Open Sans';
+  font-size: 1rem;
   width: 100%;
   max-width: 100%;
   margin: 0;
