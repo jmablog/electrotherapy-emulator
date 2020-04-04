@@ -74,11 +74,11 @@ function showSummary() {
     currentModal.getElementsByClassName("choices")[0].style.display = "none";
     currentModal.getElementsByClassName("summary")[0].style.display = "block";
 
-    var entries = currentModal.getElementsByClassName("entry");
-    var results = currentModal.getElementsByClassName("result");
+    var selectEntries = currentModal.getElementsByClassName("select-entry");
+    var selectResults = currentModal.getElementsByClassName("select-result");
 
-    for (i = 0; i < results.length; i++){
-        results[i].innerHTML = entries[i].options[entries[i].selectedIndex].text;
+    for (i = 0; i < selectResults.length; i++){
+        selectResults[i].innerHTML = selectEntries[i].options[selectEntries[i].selectedIndex].text;
     }
 
     var valueEntries = currentModal.getElementsByClassName("value-entry");
