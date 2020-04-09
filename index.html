@@ -11,8 +11,9 @@
         <!-- Trigger/Open The Modal -->
         <!-- <a href="#" class="button" id="btnStim1">Stim Channel 1 <i class="icon-chevron-right"></i></a>
         <a href="#" class="button" id="btnStim2">Stim Channel 2 <i class="icon-chevron-right"></i></a> -->
-        <button id="btnStim1" class="btn">IFT: Stim Channel 1</button>
-        <button id="btnStim2" class="btn">IFT: Stim Channel 2</button>
+        <!-- <button id="btnStim1" class="btn">IFT: Stim Channel 1</button>
+        <button id="btnStim2" class="btn">IFT: Stim Channel 2</button> -->
+        <button id="btnIFT" class="btn">Inteferential Electrotherapy</button>
     </div>
     <div class="btn-container">
         <!-- <a href="#" class="button" id="btnUltrasound">Ultrasound <i class="icon-chevron-right"></i></a>
@@ -22,16 +23,51 @@
     </div>
     <!-- ================================================================= -->
 
+
+
+    <!-- IFT Pole Choice Modal -->
+    <div id="modalIFT" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="modalIFTClose" class="close">&times;</span>
+            
+                <div class="pre-choice">
+                    <h2>Choose Pole Number:</h2>
+                    <form>
+                    Poles: 
+                    <select id="pole-choice" class="select-entry">
+                        <option>Two</option>
+                        <option selected>Four</option>
+                    </select>
+                    <br><br>
+                    <input type="button" onclick="poleChoice()" value="Next">
+                    </form>
+    
+                </div>
+            
+        </div>
+    </div>
+
+
+
+
     <!-- Stim 1 Modal -->
-    <div id="modalStim1" class="modal">
+<div id="modalStim1" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
         <span id="modalStim1Close" class="close">&times;</span>
         
             <div class="choices">
-                <h2>Interferential Stim Channel 1:</h2>
+                <h2>Interferential (Two Pole):</h2>
                 <form>
+                Stim Channel: 
+                <select id="stim1-stimchannel" class="select-entry">
+                    <option selected>1</option>
+                    <option>2</option>
+                </select>
+                <br><br>
                 Sweep: 
                 <select id="stim1-sweep" class="select-entry">
                     <option>Off</option>
@@ -76,7 +112,9 @@
             </div>
 
             <div class="summary">
-                <h2>Interferential Stim 1 Summary</h2>
+                <h2>Interferential (Two Pole) Summary</h2>
+                <span class="result-label">Stim Channel:</span> <span id="stim1-stimchannel-sum" class="select-result">-</span>
+                <br><br>
                 <span class="result-label">Sweep:</span> <span id="stim1-sweep-sum" class="select-result">-</span>
                 <br><br>
                 <span class="result-label">Beat Frequency:</span> <span id="stim1-beatlow-sum" class="value-result">-</span> - <span id="stim1-beathigh-sum" class="value-result">-</span> Hz
@@ -92,10 +130,9 @@
                 <span class="result-label">Explanation:</span> <span id="stim1-explanation-sum" longtext="yes" class="value-result">-</span>
 
             </div>
-
+        
     </div>
-
-    </div>
+</div>
 
     <!-- ================================================================= -->
 
@@ -107,7 +144,7 @@
             <span class="close" id="modalStim2Close">&times;</span>
             
             <div class="choices">
-                <h2>Interferential Stim Channel 2:</h2>
+                <h2>Interferential (Four Pole):</h2>
                 <form>
                 Sweep: 
                 <select id="stim2-sweep" class="select-entry">
@@ -153,7 +190,7 @@
             </div>
 
             <div class="summary">
-                <h2>Interferential Stim 2 Summary</h2>
+                <h2>Interferential (Four Pole) Summary</h2>
                 <span class="result-label">Sweep:</span> <span id="stim2-sweep-sum" class="select-result">-</span>
                 <br><br>
                 <span class="result-label">Beat Frequency:</span> <span id="stim2-beatlow-sum" class="value-result">-</span> - <span id="stim1-beathigh-sum" class="value-result">-</span> Hz

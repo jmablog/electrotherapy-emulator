@@ -1,21 +1,29 @@
 let currentModal;
 let id;
+let iftModal;
 var span = document.getElementsByClassName('close');
 
 // When the user clicks the button, open the modal
-document.getElementById('btnStim1').onclick = function() {
-	currentModal = document.getElementById('modalStim1');
+document.getElementById('btnIFT').onclick = function() {
+	currentModal = document.getElementById('modalIFT');
 	currentModal.style.display = 'block';
 
 	reset_form();
 };
 
-document.getElementById('btnStim2').onclick = function() {
-	currentModal = document.getElementById('modalStim2');
-	currentModal.style.display = 'block';
+// document.getElementById('btnStim1').onclick = function() {
+// 	currentModal = document.getElementById('modalStim1');
+// 	currentModal.style.display = 'block';
 
-	reset_form();
-};
+// 	reset_form();
+// };
+
+// document.getElementById('btnStim2').onclick = function() {
+// 	currentModal = document.getElementById('modalStim2');
+// 	currentModal.style.display = 'block';
+
+// 	reset_form();
+// };
 
 document.getElementById('btnUltrasound').onclick = function() {
 	currentModal = document.getElementById('modalUltrasound');
@@ -32,6 +40,13 @@ document.getElementById('btnTENS').onclick = function() {
 };
 
 // When the user clicks on <span> (x), close the modal
+document.getElementById('modalIFTClose').onclick = function() {
+	// currentModal.style.display = "none";
+	// currentModal.getElementsByClassName("choices")[0].style.display = "block";
+	// currentModal.getElementsByClassName("summary")[0].style.display = "none";
+	reset_page();
+};
+
 document.getElementById('modalStim1Close').onclick = function() {
 	// currentModal.style.display = "none";
 	// currentModal.getElementsByClassName("choices")[0].style.display = "block";
@@ -48,6 +63,10 @@ document.getElementById('modalUltrasoundClose').onclick = function() {
 };
 
 document.getElementById('modalTENSClose').onclick = function() {
+	reset_page();
+};
+
+document.getElementById('modalIFTClose').onclick = function() {
 	reset_page();
 };
 
@@ -120,3 +139,22 @@ function updateIntensityUnits() {
 }
 
 document.getElementById('ultrasound-display').addEventListener('input', updateIntensityUnits);
+
+function poleChoice() {
+	choice = document.getElementById('pole-choice');
+	poleNo = choice.options[choice.selectedIndex].text;
+
+	if (poleNo === 'Two') {
+		previousModal = currentModal;
+		currentModal = document.getElementById('modalStim1');
+		previousModal.style.display = 'none';
+		currentModal.style.display = 'block';
+		reset_form();
+	} else if (poleNo === 'Four') {
+		previousModal = currentModal;
+		currentModal = document.getElementById('modalStim2');
+		previousModal.style.display = 'none';
+		currentModal.style.display = 'block';
+		reset_form();
+	}
+}
