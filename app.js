@@ -32,12 +32,12 @@ document.getElementById('btnUltrasound').onclick = function() {
 	reset_form();
 };
 
-document.getElementById('btnTENS').onclick = function() {
-	currentModal = document.getElementById('modalTENS');
-	currentModal.style.display = 'block';
+// document.getElementById('btnTENS').onclick = function() {
+// 	currentModal = document.getElementById('modalTENS');
+// 	currentModal.style.display = 'block';
 
-	reset_form();
-};
+// 	reset_form();
+// };
 
 // When the user clicks on <span> (x), close the modal
 document.getElementById('modalIFTClose').onclick = function() {
@@ -62,9 +62,9 @@ document.getElementById('modalUltrasoundClose').onclick = function() {
 	reset_page();
 };
 
-document.getElementById('modalTENSClose').onclick = function() {
-	reset_page();
-};
+// document.getElementById('modalTENSClose').onclick = function() {
+// 	reset_page();
+// };
 
 document.getElementById('modalIFTClose').onclick = function() {
 	reset_page();
