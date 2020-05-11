@@ -3,15 +3,17 @@
 
 body {
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-	color: #434c5e;
+	color: black;
 	background-color: white;
 }
 
 h1,
 h2,
 h3 {
-	font-family: 'Libre Baskerville', serif;
+	font-family: 'Open Sans', serif;
+	font-weight: bold;
 	text-align: center;
+	color: #4c566a;
 }
 
 .main-wrapper {
@@ -87,10 +89,10 @@ h3 {
 
 .result-label {
 	display: block;
-	font-variant: small-caps;
+	/* font-variant: small-caps; */
 	font-size: 0.9rem;
-	font-weight: bold;
-	color: #5e81ac;
+	/* font-weight: bold; */
+	color: #4c566a;
 }
 
 button {
